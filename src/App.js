@@ -11,6 +11,8 @@ class App extends React.Component {
     this.state = {
       messages: [],
       name: "",
+      code: false,
+      login: true,
     };
 
     this.onAddMessage = this.onAddMessage.bind(this);
@@ -42,9 +44,16 @@ class App extends React.Component {
   onAddName(event) {
     event.preventDefault();
     if (this.input.value.length !== 0) {
-      this.setState({
-        name: this.input.value,
-      });
+      if (this.inputPass.value === "AWM") {
+        this.setState({
+          name: this.input.value,
+          code: true,
+        });
+      } else {
+        this.setState({
+          login: false,
+        });
+      }
     }
   }
 
@@ -69,6 +78,12 @@ class App extends React.Component {
                         placeholder="Enter Your Name..."
                         ref={(node) => (this.input = node)}
                       />
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter Your Chat Code..."
+                        ref={(nodePass) => (this.inputPass = nodePass)}
+                      />
                       <div className="input-group-append">
                         <input
                           type="Submit"
@@ -78,6 +93,9 @@ class App extends React.Component {
                       </div>
                     </div>
                   </form>
+                  <div className="text-center">
+                    {!this.state.login ? "Enter Valid Chat Code" : null}
+                  </div>
                 </div>
               </div>
             </div>
