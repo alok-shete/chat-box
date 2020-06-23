@@ -56,7 +56,9 @@ class App extends React.Component {
             <div className={cx("container", "col-sm-6")}>
               <div className="card">
                 <div className={cx("card-header", "text-center")}>
-                  Private Chat Box
+                  <h3>
+                    <b>Private Chat Box</b>
+                  </h3>
                 </div>
                 <div className="card-footer">
                   <form onSubmit={this.onAddName}>
@@ -84,7 +86,9 @@ class App extends React.Component {
           <div className={cx("container", "col-sm-6")}>
             <div className="card">
               <div className={cx("card-header", "text-center")}>
-                Private Chat Box
+                <h3>
+                  <b>Private Chat Box</b>
+                </h3>
               </div>
               <div className="card-footer">
                 <form onSubmit={this.onAddMessage}>
