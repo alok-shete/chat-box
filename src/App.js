@@ -34,7 +34,8 @@ class App extends React.Component {
   onAddMessage(event) {
     event.preventDefault();
     if (this.input.value.length !== 0) {
-      var data = this.state.name + "<<>>" + this.input.value;
+      var date = new Date().toLocaleString();
+      var data = this.state.name + "<<>>" + this.input.value + "<<>>" + date;
       database.ref("messages").push(data);
 
       this.input.value = "";
@@ -134,6 +135,7 @@ class App extends React.Component {
                       user={this.state.name}
                       name={message.text.split("<<>>")[0]}
                       message={message.text.split("<<>>")[1]}
+                      date={message.text.split("<<>>")[2]}
                       classFl="flex-row"
                       classFlrxRev="flex-row-reverse"
                       classGreen="alert-success"
