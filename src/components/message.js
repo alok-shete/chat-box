@@ -9,9 +9,13 @@ const message = (prop) => {
           <div className={cx("d-flex", "flex-row-reverse")}>
             <div className="col-sm-8">
               <div className="text-right">
-                {prop.name[0].toUpperCase() + prop.name.slice(1)}
+                <b>{prop.name[0].toUpperCase() + prop.name.slice(1)}</b>
                 <br />
-                <span className="font-italic">{prop.date}</span>
+                <span className="font-italic">
+                  <h6>
+                    <small>{prop.date}</small>
+                  </h6>
+                </span>
               </div>
             </div>
           </div>
@@ -32,9 +36,15 @@ const message = (prop) => {
       ) : (
         <div>
           <span>
-            {prop.name[0].toLowerCase().toUpperCase() + prop.name.slice(1)}
+            <b>
+              {prop.name[0].toLowerCase().toUpperCase() + prop.name.slice(1)}
+            </b>
             <br />
-            <span className="font-italic">{prop.date}</span>
+            <span className="font-italic">
+              <h6>
+                <small>{prop.date}</small>
+              </h6>
+            </span>
           </span>
           <div className={cx("d-flex", "flex-row")}>
             <div className={cx("alert", "alert-primary", "col-sm-8")}>
